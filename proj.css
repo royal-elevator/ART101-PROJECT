@@ -1,0 +1,23 @@
+h1 {
+  text-align: center;
+  width: 100%;
+  font-size: 85px;
+    color: green;
+}
+background {
+  background: black;
+}
+
+body {
+  background: black;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+}
+
+.start-button {
+
+text-align: center;
+size: 90px;
+
+}
