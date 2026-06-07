@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // placeholder names for body and head and feature choices, feel free to change, chenge the source images to
 // imput your own drawings as the different parts
 
-//create an array for features, the state variable chooses which of these are selected
+// array for features, the state variable chooses which of these are selected
   const variants = {
     body: [
       { label: 'Pulsar Shell', className: 'body-0', src: 'images/body-0.png' },
