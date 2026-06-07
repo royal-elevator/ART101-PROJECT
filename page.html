@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAKAKA'S PROJECT</title>
+  <link rel="stylesheet" href="page.css">
+
+</head>
+<body>
+  <main class="title-page">
+    <header>
+
+      <h1>Build Your own Alien!!</h1>
+
+    </header>
+
+    <section class="intro-copy" id="intro-panel">
+
+      <h2>Lore!</h2>
+      <p>Click the Start Building button to enter build mode. Then flip through body, head, and feature options to design a silly alien creature. add some more lore here: where do the aliens come from?</p>
+    </section>
+    <div>
+    <section class="builder-panel hidden" id="builder-panel">
+      <div class="preview-card">
+        <div class="preview-title">Alien Workbench</div>
+        <div class="alien-stage">
+          <div id="alien-body" class="alien-part alien-body body-0">
+            <img id="alien-body-img" src="placeholder.jpg" alt="Body option" />
+          </div>
+          <div id="alien-head" class="alien-part alien-head head-0">
+            <img id="alien-head-img" src="placeholder.jpg" alt="Head option" />
+          </div>
+          <div id="alien-features" class="alien-part alien-features features-0">
+            <img id="alien-features-img" src="placeholder.jpg" alt="Features option" />
+          </div>
+        </div>
+        <div class="preview-tags">
+          <span class="tag">Body: <strong id="body-label">Pulsar Shell</strong></span>
+          <span class="tag">Head: <strong id="head-label">Orb Cap</strong></span>
+          <span class="tag">Features: <strong id="features-label">Glowing Antennae</strong></span>
+        </div>
+      </div>
+
+      <div class="controls-grid">
+        <div class="control-card">
+          <h3>Body</h3>
+          <div class="control-row">
+            <button class="flip-button" data-part="body" data-direction="-1">◀</button>
+            <button class="flip-button" data-part="body" data-direction="1">▶</button>
+          </div>
+
+        </div>
+        <div class="control-card">
+          <h3>Head</h3>
+          <div class="control-row">
+            <button class="flip-button" data-part="head" data-direction="-1">◀</button>
+            <button class="flip-button" data-part="head" data-direction="1">▶</button>
+          </div>
+
+        </div>
+        <div class="control-card">
+          <h3>Features</h3>
+          <div class="control-row">
+            <button class="flip-button" data-part="features" data-direction="-1">◀</button>
+            <button class="flip-button" data-part="features" data-direction="1">▶</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+
+    <footer>
+      <button id="start-button">Start Building</button>
+      <button id="start-button">Gallery</button>
+
+    </footer>
+  </main>
+
+  <script src="page.js"></script>
+</body>
+</html>
