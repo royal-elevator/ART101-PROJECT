@@ -8,13 +8,37 @@
   <title>MAKAKA'S PROJECT</title>
   <link rel="stylesheet" href="page.css">
 
+  <audio id="Song" controls>
+  <source src="music/Miranda167DraftFINAL.wav" type="audio/mpeg">
+  </audio>
+
+  
+
 </head>
+
+<button id="playBtn" onclick="toggleMusic()">▶ Play</button>
+  <script>
+  const song = document.getElementById("Song");
+  const btn = document.getElementById("playBtn");
+
+  function toggleMusic() {
+    if (song.paused) {
+      song.play();
+      btn.textContent = "⏸ Pause Music"; 
+    } else {
+      song.pause();
+      btn.textContent = "▶ Play Music";   
+    }
+  }
+  </script>
+
 <body>
   <main class="title-page">
     <header>
 
       <h1>Build Your own Alien!!</h1>
-
+  
+  
     </header>
 
     <section class="intro-copy" id="intro-panel">

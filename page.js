@@ -1,4 +1,6 @@
 
+
+
 // JavaScript for the alien builder page
 document.addEventListener('DOMContentLoaded', () => {
   const startButton = document.getElementById('start-button');

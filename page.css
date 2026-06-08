@@ -1,5 +1,10 @@
 /* sorry if some things arent connected to anything, i find it hard to keep track of my css! 
 Feel free to change anything you like! */
+.playBtn {
+  background: rgba(0, 0, 0, 0.35);
+  font-family: "Courier New", Courier, monospace;
+  justify-self: right;
+}
 
 body {
   margin: 0;
