@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
 
-// function to update the preview images and labels based on the current state
+// function to update the preview images and labels based on the variables,
+//  hides image if loading fails 
   function updatePreview() {
     const bodyChoice = variants.body[state.body];
     const headChoice = variants.head[state.head];
@@ -76,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     featuresLabel.textContent = featuresChoice.label;
   }
 
-  // event listeners for start button
+  // event listeners and function for start button
   startButton.addEventListener('click', () => {
     builderPanel.classList.toggle('hidden');
     introPanel.classList.toggle('hidden');
@@ -89,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // event listeners for flip buttons
+  // event listeners and function for flip buttons
   document.querySelectorAll('.flip-button').forEach(button => {
     button.addEventListener('click', () => {
       const part = button.dataset.part;
