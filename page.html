@@ -7,16 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MAKAKA'S PROJECT</title>
   <link rel="stylesheet" href="page.css">
-
-  <audio id="Song" controls>
-  <source src="music/Miranda167DraftFINAL.wav" type="audio/mpeg">
+  <audio id="Song" src="music/Miranda167DraftFINAL.wav" loop="true" hidden="true" autostart="false">
+  <p>If you are reading this, it is because your browser does not support the audio element.</p>
   </audio>
 
   
 
 </head>
 
-<button id="playBtn" onclick="toggleMusic()">▶ Play</button>
+<button id="playBtn" onclick="toggleMusic()" class="playBtn">▶ Play</button>
   <script>
   const song = document.getElementById("Song");
   const btn = document.getElementById("playBtn");
