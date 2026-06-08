@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
 
-// function to update the preview images and labels based on the variables,
+// function to update the preview images and labels based on the variables 
+// copy and past 1 of each to add a box and add a constant, and a state variable in the array and list above
 // hides image if loading fails 
   function updatePreview() {
     const bodyChoice = variants.body[state.body];
