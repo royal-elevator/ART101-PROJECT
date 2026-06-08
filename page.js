@@ -16,10 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const headLabel = document.getElementById('head-label');
   const featuresLabel = document.getElementById('features-label');
 
-// placeholder names for body and head and feature choices, feel free to change, chenge the source images to
-// imput your own drawings as the different parts
-
-// array for features, the state variable chooses which of these are selected
+  // array for features, the state variable chooses which of these are selected
   const variants = {
     body: [
       { label: 'body1', className: 'body-0', src: 'images/body-0.png' },
@@ -38,21 +35,24 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
   };
 
-  // set variables
+  // keeping track of objects 
   const state = {
-    body: 0,
-    head: 0,
-    features: 0
+    body: { index: 0, x: 0, y: 0, scale: 50 },
+    head: { index: 0, x: 0, y: 0, scale: 50 },
+    features: { index: 0, x: 0, y: 0, scale: 50 }
   };
 
+  // function to apply CSS transforms
+  function applyTransform(element, partData) {
+    const actualScale = partData.scale / 50; 
+    element.style.transform = `translate(${partData.x}px, ${partData.y}px) scale(${actualScale})`;
+  }
 
-// function to update the preview images and labels based on the variables 
-// copy and past 1 of each to add a box and add a constant, and a state variable in the array and list above
-// hides image if loading fails 
+  // function to update the preview images and labels based on the variables 
   function updatePreview() {
-    const bodyChoice = variants.body[state.body];
-    const headChoice = variants.head[state.head];
-    const featuresChoice = variants.features[state.features];
+    const bodyChoice = variants.body[state.body.index];
+    const headChoice = variants.head[state.head.index];
+    const featuresChoice = variants.features[state.features.index];
 
     bodyEl.className = `alien-part alien-body ${bodyChoice.className}`;
     headEl.className = `alien-part alien-head ${headChoice.className}`;
@@ -77,6 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
     bodyLabel.textContent = bodyChoice.label;
     headLabel.textContent = headChoice.label;
     featuresLabel.textContent = featuresChoice.label;
+
+    // Apply exact positions and scales
+    applyTransform(bodyImg, state.body);
+    applyTransform(headImg, state.head);
+    applyTransform(featuresImg, state.features);
   }
 
   // event listeners and uses function for start button
@@ -98,7 +103,46 @@ document.addEventListener('DOMContentLoaded', () => {
       const part = button.dataset.part;
       const direction = Number(button.dataset.direction);
       const items = variants[part];
-      state[part] = (state[part] + direction + items.length) % items.length;
+      state[part].index = (state[part].index + direction + items.length) % items.length;
+      updatePreview();
+    });
+  });
+
+  // New event listeners, control panels, x y and slide scaler
+
+  // Accordion Logic (Opening/Closing Control Panels)
+  document.querySelectorAll('.panel-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const parentCard = trigger.closest('.control-card');
+      const isActive = parentCard.classList.contains('active');
+      
+      document.querySelectorAll('.control-card').forEach(card => {
+        card.classList.remove('active');
+      });
+
+      if (!isActive) {
+        parentCard.classList.add('active');
+      }
+    });
+  });
+
+  // D-Pad Buttons X y Axis
+  document.querySelectorAll('.move-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const part = btn.dataset.part; 
+      const axis = btn.dataset.axis; 
+      const amount = Number(btn.dataset.amount); 
+      
+      state[part][axis] += amount;
+      updatePreview();
+    });
+  });
+
+  // Scale Sliders (size)
+  document.querySelectorAll('.scale-slider').forEach(slider => {
+    slider.addEventListener('input', (e) => {
+      const part = slider.dataset.part;
+      state[part].scale = Number(e.target.value);
       updatePreview();
     });
   });

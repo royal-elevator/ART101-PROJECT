@@ -73,33 +73,82 @@
           <span class="tag">Features: <strong id="features-label">Features1</strong></span>
         </div>
       </div>
-<!-- controls that determine the alien's appearance, you can flip from left to right -->
-      <div class="controls-grid">
-        <div class="control-card">
-          <h3>Body</h3>
-          <div class="control-row">
-            <button class="flip-button" data-part="body" data-direction="-1">◀</button>
-            <button class="flip-button" data-part="body" data-direction="1">▶</button>
+        <!-- the updated code for byuttons, scale, and arrows to move images-->
+        <div class="controls-grid">
+          <!-- body section, also code section for the accordion style boxes that come down
+          and show button layout -->
+          <div class="control-card">
+            <h3 class="panel-trigger">Body</h3>
+            <div class="panel-content">
+              <div class="control-row">
+                <button class="flip-button" data-part="body" data-direction="-1">◀</button>
+                <span>Swap</span>
+                <button class="flip-button" data-part="body" data-direction="1">▶</button>
+              </div>
+              <div class="d-pad">
+                <button class="move-btn" data-part="body" data-axis="y" data-amount="-10">↑</button>
+                <div class="d-pad-middle">
+                  <button class="move-btn" data-part="body" data-axis="x" data-amount="-10">←</button>
+                  <button class="move-btn" data-part="body" data-axis="x" data-amount="10">→</button>
+                </div>
+                <button class="move-btn" data-part="body" data-axis="y" data-amount="10">↓</button>
+              </div>
+              <div class="scale-control">
+                <label>Scale</label>
+                <input type="range" class="scale-slider" data-part="body" min="10" max="100" value="50">
+              </div>
+            </div>
+          </div>
+          <!-- head section, also code section for the accordion style boxes that come down
+          and show button layout -->
+          <div class="control-card">
+            <h3 class="panel-trigger">Head</h3>
+            <div class="panel-content">
+              <div class="control-row">
+                <button class="flip-button" data-part="head" data-direction="-1">◀</button>
+                <span>Swap</span>
+                <button class="flip-button" data-part="head" data-direction="1">▶</button>
+              </div>
+              <div class="d-pad">
+                <button class="move-btn" data-part="head" data-axis="y" data-amount="-10">↑</button>
+                <div class="d-pad-middle">
+                  <button class="move-btn" data-part="head" data-axis="x" data-amount="-10">←</button>
+                  <button class="move-btn" data-part="head" data-axis="x" data-amount="10">→</button>
+                </div>
+                <button class="move-btn" data-part="head" data-axis="y" data-amount="10">↓</button>
+              </div>
+              <div class="scale-control">
+                <label>Scale</label>
+                <input type="range" class="scale-slider" data-part="head" min="10" max="100" value="50">
+              </div>
+            </div>
+          </div>
+<!-- Features   section, also code section for the accordion style boxes that come down
+          and show button layout -->
+          <div class="control-card">
+            <h3 class="panel-trigger">Features</h3>
+            <div class="panel-content">
+              <div class="control-row">
+                <button class="flip-button" data-part="features" data-direction="-1">◀</button>
+                <span>Swap</span>
+                <button class="flip-button" data-part="features" data-direction="1">▶</button>
+              </div>
+              <div class="d-pad">
+                <button class="move-btn" data-part="features" data-axis="y" data-amount="-10">↑</button>
+                <div class="d-pad-middle">
+                  <button class="move-btn" data-part="features" data-axis="x" data-amount="-10">←</button>
+                  <button class="move-btn" data-part="features" data-axis="x" data-amount="10">→</button>
+                </div>
+                <button class="move-btn" data-part="features" data-axis="y" data-amount="10">↓</button>
+              </div>
+              <div class="scale-control">
+                <label>Scale</label>
+                <input type="range" class="scale-slider" data-part="features" min="10" max="100" value="50">
+              </div>
+            </div>
           </div>
 
         </div>
-        <div class="control-card">
-          <h3>Head</h3>
-          <div class="control-row">
-            <button class="flip-button" data-part="head" data-direction="-1">◀</button>
-            <button class="flip-button" data-part="head" data-direction="1">▶</button>
-          </div>
-
-        </div>
-        <div class="control-card">
-          <h3>Features</h3>
-          <div class="control-row">
-            <button class="flip-button" data-part="features" data-direction="-1">◀</button>
-            <button class="flip-button" data-part="features" data-direction="1">▶</button>
-          </div>
-        </div>
-      </div>
-      </div>
     </section>
 
 <!-- these are the start and gallery buttons at the bottom of the page -->
@@ -112,4 +161,4 @@
 
   <script src="page.js"></script>
 </body>
-</html>
+</html>>

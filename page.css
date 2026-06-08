@@ -4,6 +4,13 @@ Feel free to change anything you like! */
   background: rgba(0, 0, 0, 0.35);
   font-family: "Courier New", Courier, monospace;
   justify-self: right;
+  /* Added styling, since it was floating */
+  color: #efffff;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  padding: 0.85rem 1.5rem;
+  cursor: pointer;
+  margin: 1rem;
 }
 
 body {
@@ -20,7 +27,6 @@ body {
   background: rgba(0, 0, 0, 0.35);
   font-family: "Courier New", Courier, monospace;
 }
-
 
 :root {
   --accent: #7bff8a;
@@ -139,7 +145,6 @@ footer {
   font-size: 0.95rem;
 }
 
-
 .hidden {
   display: none !important;
 }
@@ -184,6 +189,12 @@ footer {
   pointer-events: none;
 }
 
+/* Ensure images can overlap */
+.alien-part {
+  position: absolute;
+  transition: transform 0.1s ease;
+}
+
 .preview-tags {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -204,6 +215,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  min-width: 300px;
 }
 
 .control-card {
@@ -213,16 +225,11 @@ footer {
   padding: 1rem;
 }
 
-.control-card h3 {
-  margin: 0 0 0.85rem;
-  font-size: 1rem;
-  letter-spacing: 0.15em;
-}
-
 .control-row {
   display: flex;
   justify-content: center;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 1rem;
 }
 
 .flip-button {
@@ -244,4 +251,68 @@ footer {
 
 .log-line {
   letter-spacing: 0.06em;
+}
+
+/* --- MAKAKA'S NEW UPGRADES (Accordion, D-pad, Scaling) --- */
+
+.panel-trigger {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.2s, background 0.2s;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+}
+
+.panel-trigger:hover {
+  color: var(--accent);
+  background: rgba(123, 255, 138, 0.1);
+}
+
+.panel-content {
+  display: none;
+  margin-top: 1.5rem;
+}
+
+.control-card.active .panel-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.d-pad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.d-pad-middle {
+  display: flex;
+  gap: 1.5rem; 
+}
+
+.move-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background: var(--button-bg);
+}
+
+.scale-control {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.scale-control label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-soft);
+}
+
+.scale-slider {
+  width: 100%;
+  cursor: pointer;
 }
