@@ -1,5 +1,6 @@
 
 // JavaScript for the alien builder page
+// event listeners for website and builder
 document.addEventListener('DOMContentLoaded', () => {
   const startButton = document.getElementById('start-button');
   const builderPanel = document.getElementById('builder-panel');
