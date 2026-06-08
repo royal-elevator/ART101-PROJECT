@@ -21,19 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
 // array for features, the state variable chooses which of these are selected
   const variants = {
     body: [
-      { label: 'Pulsar Shell', className: 'body-0', src: 'images/body-0.png' },
-      { label: 'Nebula Torso', className: 'body-1', src: 'images/body-1.png' },
-      { label: 'Glitch Armor', className: 'body-2', src: 'images/body-2.png' }
+      { label: 'body1', className: 'body-0', src: 'images/body-0.png' },
+      { label: 'body2', className: 'body-1', src: 'images/body-1.png' },
+      { label: 'body3', className: 'body-2', src: 'images/body-2.png' }
     ],
     head: [
-      { label: 'Orb Cap', className: 'head-0', src: 'images/head-0.png' },
-      { label: 'Signal Dome', className: 'head-1', src: 'images/head-1.png' },
-      { label: 'Crystal Crown', className: 'head-2', src: 'images/head-2.png' }
+      { label: 'head1', className: 'head-0', src: 'images/head-0.png' },
+      { label: 'head2', className: 'head-1', src: 'images/head-1.png' },
+      { label: 'head3', className: 'head-2', src: 'images/head-2.png' }
     ],
     features: [
-      { label: 'Glowing Antennae', className: 'features-0', src: 'images/features-0.png' },
-      { label: 'Blue Eyes', className: 'features-1', src: 'images/features-1.png' },
-      { label: 'Neon Markings', className: 'features-2', src: 'images/features-2.png' }
+      { label: 'features1', className: 'features-0', src: 'images/features-0.png' },
+      { label: 'features2', className: 'features-1', src: 'images/features-1.png' },
+      { label: 'features3', className: 'features-2', src: 'images/features-2.png' }
     ]
   };
 
