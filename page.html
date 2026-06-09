@@ -1,17 +1,35 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
+
 
 <head>
 
+
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>MAKAKA'S PROJECT</title>
+
   <link rel="stylesheet" href="page.css">
-<!-- Background music -->
+
+  <!-- Background music -->
+
   <audio id="Song" src="music/Miranda167DraftFINAL.wav" loop="true" hidden="true" autostart="false">
-  <p>If you are reading this, it is because your browser does not support the audio element.</p>
+
+    <p>If you are reading this, it is because your browser does not support the audio element.</p>
+
   </audio>
-<!-- Background image -->
+
+  <!-- Background image -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+
+
   <style>
   body {
   background-image: url('/art101/art101/alien/ART101-PROJECT/images/realbackground.png');
@@ -19,282 +37,555 @@
   </style>
 
 
+
+
+
 </head>
 
+
+
 <!-- Play button for the background music -->
+
 <button id="playBtn" onclick="toggleMusic()" class="playBtn">▶ Play Music</button>
-  <script>
+
+<script>
+
   const song = document.getElementById("Song");
+
   const btn = document.getElementById("playBtn");
 
+
+
   function toggleMusic() {
+
     if (song.paused) {
+
       song.play();
-      btn.textContent = "⏸ Pause Music"; 
+
+      btn.textContent = "⏸ Pause Music";
+
     } else {
+
       song.pause();
-      btn.textContent = "▶ Play Music";   
+
+      btn.textContent = "▶ Play Music";
+
     }
+
   }
-  </script>
+
+</script>
+
+
 
 <body>
+
   <main class="title-page">
+
     <header>
+
+
 
       <h1>Build Your own Alien!!</h1>
 
+
+
     </header>
+
+
 
     <section class="intro-copy" id="intro-panel">
 
-      <h2>Welcome Travelers!</h2>
+
+
+      <h2>Lore!</h2>
       <p>Click the Start Building button to enter build mode. Then flip through body, head, and feature options to design a silly alien creature. add some more lore here: where do the aliens come from?</p>
     </section>
+
     <div>
-    <section class="builder-panel hidden" id="builder-panel">
-      <div class="preview-card">
-        <div class="preview-title">Alien Workbench</div>
-        <div class="alien-stage">
-  <div id="alien-body" class="alien-part">
-    <img id="alien-body-img" src="placeholder.jpg" alt="Body option" />
-  </div>
-  <div id="alien-eyeColor" class="alien-part">
-    <img id="alien-eyeColor-img" src="placeholder.jpg" alt="Eye Color option" />
-  </div>
-  <div id="alien-pupils" class="alien-part">
-    <img id="alien-pupils-img" src="placeholder.jpg" alt="Pupils option" />
-  </div>
-  <div id="alien-mouth" class="alien-part">
-    <img id="alien-mouth-img" src="placeholder.jpg" alt="Mouth option" />
-  </div>
-  <div id="alien-noses" class="alien-part">
-    <img id="alien-noses-img" src="placeholder.jpg" alt="Nose option" />
-  </div>
-  <div id="alien-ears" class="alien-part">
-    <img id="alien-ears-img" src="placeholder.jpg" alt="Ear option" />
-  </div>
-  <div id="alien-blush" class="alien-part">
-    <img id="alien-blush-img" src="placeholder.jpg" alt="Blush option" />
-  </div>
-  
-  <div id="alien-brows" class="alien-part">
-    <img id="alien-brows-img" src="placeholder.jpg" alt="Brow option" />
-  </div>
-  </div>
-<!-- these are the buttons to control the alien's appearance -->
-        <div class="preview-tags">
-          <span class="tag">Body: <strong id="body-label">Body1</strong></span>
-          <span class="tag">EyeColor: <strong id="EyeColor-label">EyeColor1</strong></span>
-          <span class="tag">Pupils: <strong id="Pupils-label">Pupils1</strong></span>
-          <span class="tag">Brows: <strong id="Brows-label">Brows1</strong></span>
-          <span class="tag">Blush: <strong id="Blush-label">Blush1</strong></span>
-          <span class="tag">Mouth: <strong id="Mouth-label">Mouth1</strong></span>
-          <span class="tag">Nose: <strong id="Nose-label">Nose1</strong></span>
-          <span class="tag">Ears: <strong id="Ears-label">Ears1</strong></span>
+
+      <section class="builder-panel hidden" id="builder-panel">
+
+        <div class="preview-card">
+
+          <div class="preview-title">Alien Workbench</div>
+
+          <div class="alien-stage" id="alienWorkbench">
+
+            <div id="alien-body" class="alien-part">
+
+              <img id="alien-body-img" src="placeholder.jpg" alt="Body option" />
+
+            </div>
+
+            <div id="alien-eyeColor" class="alien-part">
+
+              <img id="alien-eyeColor-img" src="placeholder.jpg" alt="Eye Color option" />
+
+            </div>
+
+            <div id="alien-pupils" class="alien-part">
+
+              <img id="alien-pupils-img" src="placeholder.jpg" alt="Pupils option" />
+
+            </div>
+
+            <div id="alien-mouth" class="alien-part">
+
+              <img id="alien-mouth-img" src="placeholder.jpg" alt="Mouth option" />
+
+            </div>
+
+            <div id="alien-noses" class="alien-part">
+
+              <img id="alien-noses-img" src="placeholder.jpg" alt="Nose option" />
+
+            </div>
+
+            <div id="alien-ears" class="alien-part">
+
+              <img id="alien-ears-img" src="placeholder.jpg" alt="Ear option" />
+
+            </div>
+
+            <div id="alien-blush" class="alien-part">
+
+              <img id="alien-blush-img" src="placeholder.jpg" alt="Blush option" />
+
+            </div>
+
+
+
+            <div id="alien-brows" class="alien-part">
+
+              <img id="alien-brows-img" src="placeholder.jpg" alt="Brow option" />
+
+            </div>
+
+          </div>
+
+          <!-- these are the buttons to control the alien's appearance -->
+
+          <div class="preview-tags">
+
+            <span class="tag">Body: <strong id="body-label">Body1</strong></span>
+
+            <span class="tag">EyeColor: <strong id="EyeColor-label">EyeColor1</strong></span>
+
+            <span class="tag">Pupils: <strong id="Pupils-label">Pupils1</strong></span>
+
+            <span class="tag">Brows: <strong id="Brows-label">Brows1</strong></span>
+
+            <span class="tag">Blush: <strong id="Blush-label">Blush1</strong></span>
+
+            <span class="tag">Mouth: <strong id="Mouth-label">Mouth1</strong></span>
+
+            <span class="tag">Nose: <strong id="Nose-label">Nose1</strong></span>
+
+            <span class="tag">Ears: <strong id="Ears-label">Ears1</strong></span>
+
+          </div>
+
         </div>
-      </div>
+
         <!-- the updated code for byuttons, scale, and arrows to move images-->
+
         <div class="controls-grid">
+
           <!-- body section, also code section for the accordion style boxes that come down
+
           and show button layout -->
+
           <div class="control-card">
+
             <h3 class="panel-trigger">Body</h3>
+
             <div class="panel-content">
+
               <div class="control-row">
+
                 <button class="flip-button" data-part="body" data-direction="-1">◀</button>
+
                 <span>Swap</span>
+
                 <button class="flip-button" data-part="body" data-direction="1">▶</button>
+
               </div>
+
               <div class="d-pad">
+
                 <button class="move-btn" data-part="body" data-axis="y" data-amount="-10">↑</button>
+
                 <div class="d-pad-middle">
+
                   <button class="move-btn" data-part="body" data-axis="x" data-amount="-10">←</button>
+
                   <button class="move-btn" data-part="body" data-axis="x" data-amount="10">→</button>
+
                 </div>
+
                 <button class="move-btn" data-part="body" data-axis="y" data-amount="10">↓</button>
+
               </div>
+
               <div class="scale-control">
+
                 <label>Scale</label>
+
                 <input type="range" class="scale-slider" data-part="body" min="10" max="100" value="50">
+
               </div>
+
             </div>
+
           </div>
+
           <!-- eyeColorsection, also code section for the accordion style boxes that come down
+
           and show button layout -->
+
           <div class="control-card">
+
             <h3 class="panel-trigger">eyeColor</h3>
+
             <div class="panel-content">
+
               <div class="control-row">
+
                 <button class="flip-button" data-part="eyeColor" data-direction="-1">◀</button>
+
                 <span>Swap</span>
+
                 <button class="flip-button" data-part="eyeColor" data-direction="1">▶</button>
+
               </div>
+
               <div class="d-pad">
+
                 <button class="move-btn" data-part="eyeColor" data-axis="y" data-amount="-10">↑</button>
+
                 <div class="d-pad-middle">
+
                   <button class="move-btn" data-part="eyeColor" data-axis="x" data-amount="-10">←</button>
+
                   <button class="move-btn" data-part="eyeColor" data-axis="x" data-amount="10">→</button>
+
                 </div>
+
                 <button class="move-btn" data-part="eyeColor" data-axis="y" data-amount="10">↓</button>
+
               </div>
+
               <div class="scale-control">
+
                 <label>Scale</label>
+
                 <input type="range" class="scale-slider" data-part="eyeColor" min="10" max="100" value="50">
+
               </div>
+
             </div>
+
           </div>
-<!-- pupils   section, also code section for the accordion style boxes that come down
+
+          <!-- pupils   section, also code section for the accordion style boxes that come down
+
           and show button layout -->
+
           <div class="control-card">
+
             <h3 class="panel-trigger">pupils</h3>
+
             <div class="panel-content">
+
               <div class="control-row">
+
                 <button class="flip-button" data-part="pupils" data-direction="-1">◀</button>
+
                 <span>Swap</span>
+
                 <button class="flip-button" data-part="pupils" data-direction="1">▶</button>
+
               </div>
+
               <div class="d-pad">
+
                 <button class="move-btn" data-part="pupils" data-axis="y" data-amount="-10">↑</button>
+
                 <div class="d-pad-middle">
+
                   <button class="move-btn" data-part="pupils" data-axis="x" data-amount="-10">←</button>
+
                   <button class="move-btn" data-part="pupils" data-axis="x" data-amount="10">→</button>
+
                 </div>
+
                 <button class="move-btn" data-part="pupils" data-axis="y" data-amount="10">↓</button>
+
               </div>
+
               <div class="scale-control">
+
                 <label>Scale</label>
+
                 <input type="range" class="scale-slider" data-part="pupils" min="10" max="100" value="50">
+
               </div>
+
             </div>
+
           </div>
+
           <!-- Brows section-->
-           <div class="control-card">
+
+          <div class="control-card">
+
             <h3 class="panel-trigger">brows</h3>
+
             <div class="panel-content">
+
               <div class="control-row">
+
                 <button class="flip-button" data-part="brows" data-direction="-1">◀</button>
+
                 <span>Swap</span>
+
                 <button class="flip-button" data-part="brows" data-direction="1">▶</button>
+
               </div>
+
               <div class="d-pad">
+
                 <button class="move-btn" data-part="brows" data-axis="y" data-amount="-10">↑</button>
+
                 <div class="d-pad-middle">
+
                   <button class="move-btn" data-part="brows" data-axis="x" data-amount="-10">←</button>
+
                   <button class="move-btn" data-part="brows" data-axis="x" data-amount="10">→</button>
+
                 </div>
+
                 <button class="move-btn" data-part="brows" data-axis="y" data-amount="10">↓</button>
+
               </div>
+
               <div class="scale-control">
+
                 <label>Scale</label>
+
                 <input type="range" class="scale-slider" data-part="brows" min="10" max="100" value="50">
+
               </div>
+
             </div>
+
           </div>
+
           <!-- blush section-->
-           <div class="control-card">
+
+          <div class="control-card">
+
             <h3 class="panel-trigger">blush</h3>
+
             <div class="panel-content">
+
               <div class="control-row">
+
                 <button class="flip-button" data-part="blush" data-direction="-1">◀</button>
+
                 <span>Swap</span>
+
                 <button class="flip-button" data-part="blush" data-direction="1">▶</button>
+
               </div>
+
               <div class="d-pad">
+
                 <button class="move-btn" data-part="blush" data-axis="y" data-amount="-10">↑</button>
+
                 <div class="d-pad-middle">
+
                   <button class="move-btn" data-part="blush" data-axis="x" data-amount="-10">←</button>
+
                   <button class="move-btn" data-part="blush" data-axis="x" data-amount="10">→</button>
+
                 </div>
+
                 <button class="move-btn" data-part="blush" data-axis="y" data-amount="10">↓</button>
+
               </div>
+
               <div class="scale-control">
+
                 <label>Scale</label>
+
                 <input type="range" class="scale-slider" data-part="blush" min="10" max="100" value="50">
+
               </div>
+
             </div>
+
           </div>
+
           <!--Mouths-->
-           <div class="control-card">
+
+          <div class="control-card">
+
             <h3 class="panel-trigger">mouths</h3>
+
             <div class="panel-content">
+
               <div class="control-row">
+
                 <button class="flip-button" data-part="mouths" data-direction="-1">◀</button>
+
                 <span>Swap</span>
+
                 <button class="flip-button" data-part="mouths" data-direction="1">▶</button>
+
               </div>
+
               <div class="d-pad">
+
                 <button class="move-btn" data-part="mouths" data-axis="y" data-amount="-10">↑</button>
+
                 <div class="d-pad-middle">
+
                   <button class="move-btn" data-part="mouths" data-axis="x" data-amount="-10">←</button>
+
                   <button class="move-btn" data-part="mouths" data-axis="x" data-amount="10">→</button>
+
                 </div>
+
                 <button class="move-btn" data-part="mouths" data-axis="y" data-amount="10">↓</button>
+
               </div>
+
               <div class="scale-control">
+
                 <label>Scale</label>
+
                 <input type="range" class="scale-slider" data-part="mouths" min="10" max="100" value="50">
+
               </div>
+
             </div>
+
           </div>
+
           <!--Noses-->
-           <div class="control-card">
+
+          <div class="control-card">
+
             <h3 class="panel-trigger">Noses</h3>
+
             <div class="panel-content">
+
               <div class="control-row">
+
                 <button class="flip-button" data-part="noses" data-direction="-1">◀</button>
+
                 <span>Swap</span>
+
                 <button class="flip-button" data-part="noses" data-direction="1">▶</button>
+
               </div>
+
               <div class="d-pad">
+
                 <button class="move-btn" data-part="noses" data-axis="y" data-amount="-10">↑</button>
+
                 <div class="d-pad-middle">
+
                   <button class="move-btn" data-part="noses" data-axis="x" data-amount="-10">←</button>
+
                   <button class="move-btn" data-part="noses" data-axis="x" data-amount="10">→</button>
+
                 </div>
+
                 <button class="move-btn" data-part="noses" data-axis="y" data-amount="10">↓</button>
+
               </div>
+
               <div class="scale-control">
+
                 <label>Scale</label>
+
                 <input type="range" class="scale-slider" data-part="noses" min="10" max="100" value="50">
+
               </div>
+
             </div>
+
           </div>
+
           <!--Ears-->
-           <div class="control-card">
+
+          <div class="control-card">
+
             <h3 class="panel-trigger">Ears</h3>
+
             <div class="panel-content">
+
               <div class="control-row">
+
                 <button class="flip-button" data-part="ears" data-direction="-1">◀</button>
+
                 <span>Swap</span>
+
                 <button class="flip-button" data-part="ears" data-direction="1">▶</button>
+
               </div>
+
               <div class="d-pad">
+
                 <button class="move-btn" data-part="ears" data-axis="y" data-amount="-10">↑</button>
+
                 <div class="d-pad-middle">
+
                   <button class="move-btn" data-part="ears" data-axis="x" data-amount="-10">←</button>
+
                   <button class="move-btn" data-part="ears" data-axis="x" data-amount="10">→</button>
+
                 </div>
+
                 <button class="move-btn" data-part="ears" data-axis="y" data-amount="10">↓</button>
+
               </div>
+
               <div class="scale-control">
+
                 <label>Scale</label>
+
                 <input type="range" class="scale-slider" data-part="ears" min="10" max="100" value="50">
+
               </div>
+
             </div>
-            
           </div>
+
         </div>
-    </section>
+
+      </section>
+
+
+      <div id="gallery"></div>
+
 
 <!-- these are the start and gallery buttons at the bottom of the page -->
-    <footer>
-      <button id="start-button">Start Building</button>
-      <button id="start-button">Gallery</button>
 
-    </footer>
-  </main>
+<footer>
 
-  <script src="page.js"></script>
+  <button id="start-button">Start Building</button>
+
+  <button id="save-button">Save Alien</button>
+</footer>
+
+</main>
+
+<script src="page.js"></script>
+
 </body>
+
 </html>>
