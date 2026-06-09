@@ -20,11 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const variants = {
     body: [
       { label: 'body1', className: 'body-0', src: 'images/bodies/body-0.png' },
-      { label: 'body2', className: 'body-1', src: 'images/body-1.png' },
-      { label: 'body3', className: 'body-2', src: 'images/body-2.png' }
+      { label: 'body2', className: 'body-1', src: 'images/bodies/body-1.png' },
+      { label: 'body3', className: 'body-2', src: 'images/bodies/body-2.png' },
+      { label: 'body4', className: 'body-3', src: 'images/bodies/body-3.png' },
+      { label: 'body5', className: 'body-4', src: 'images/bodies/body-4.png' },
+      { label: 'body6', className: 'body-5', src: 'images/bodies/body-5.png' },
+      { label: 'body7', className: 'body-6', src: 'images/bodies/body-6.png' },
+      { label: 'body8', className: 'body-7', src: 'images/bodies/body-7.png' },
+      { label: 'body9', className: 'body-8', src: 'images/bodies/body-8.png' },
     ],
     head: [
-      { label: 'head1', className: 'head-0', src: 'images/head-0.png' },
+      { label: 'Eye Color1', className: 'eyeColor-0', src: 'images/eye_color/eyecolor-0.png' },
       { label: 'head2', className: 'head-1', src: 'images/head-1.png' },
       { label: 'head3', className: 'head-2', src: 'images/head-2.png' }
     ],
