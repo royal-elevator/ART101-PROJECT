@@ -13,6 +13,19 @@ Feel free to change anything you like! */
   margin: 1rem;
 }
 
+#save-btn {
+  background: rgba(0, 0, 0, 0.35);
+  font-family: "Courier New", Courier, monospace;
+  justify-self: right;
+  /* Added styling, since it was floating */
+  color: #efffff;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  padding: 0.85rem 1.5rem;
+  cursor: pointer;
+  margin: 1rem;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
