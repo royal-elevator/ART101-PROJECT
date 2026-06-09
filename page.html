@@ -16,28 +16,26 @@
 
   <link rel="stylesheet" href="page.css">
 
-<!-- Background music -->
+  <!-- Background music -->
 
   <audio id="Song" src="music/Miranda167DraftFINAL.wav" loop="true" hidden="true" autostart="false">
 
-  <p>If you are reading this, it is because your browser does not support the audio element.</p>
+    <p>If you are reading this, it is because your browser does not support the audio element.</p>
 
   </audio>
 
-<!-- Background image -->
+  <!-- Background image -->
 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 
 
   <style>
+    body {
 
-  body {
+      background-image: url('background_img.png');
 
-  background-image: url('background_img.png');
-
-  }
-
+    }
   </style>
 
 
@@ -52,7 +50,7 @@
 
 <button id="playBtn" onclick="toggleMusic()" class="playBtn">▶ Play Music</button>
 
-  <script>
+<script>
 
   const song = document.getElementById("Song");
 
@@ -66,19 +64,19 @@
 
       song.play();
 
-      btn.textContent = "⏸ Pause Music"; 
+      btn.textContent = "⏸ Pause Music";
 
     } else {
 
       song.pause();
 
-      btn.textContent = "▶ Play Music";   
+      btn.textContent = "▶ Play Music";
 
     }
 
   }
 
-  </script>
+</script>
 
 
 
@@ -104,95 +102,96 @@
 
       <h2>Lore!</h2>
 
-      <p>Click the Start Building button to enter build mode. Then flip through body, head, and feature options to design a silly alien creature. add some more lore here: where do the aliens come from?</p>
+      <p>Click the Start Building button to enter build mode. Then flip through body, head, and feature options to
+        design a silly alien creature. add some more lore here: where do the aliens come from?</p>
 
     </section>
 
     <div>
 
-    <section class="builder-panel hidden" id="builder-panel">
+      <section class="builder-panel hidden" id="builder-panel">
 
-      <div class="preview-card">
+        <div class="preview-card">
 
-        <div class="preview-title">Alien Workbench</div>
+          <div class="preview-title">Alien Workbench</div>
 
-        <div class="alien-stage" id="alienWorkbench">
+          <div class="alien-stage" id="alienWorkbench">
 
-  <div id="alien-body" class="alien-part">
+            <div id="alien-body" class="alien-part">
 
-    <img id="alien-body-img" src="placeholder.jpg" alt="Body option" />
+              <img id="alien-body-img" src="placeholder.jpg" alt="Body option" />
 
-  </div>
+            </div>
 
-  <div id="alien-eyeColor" class="alien-part">
+            <div id="alien-eyeColor" class="alien-part">
 
-    <img id="alien-eyeColor-img" src="placeholder.jpg" alt="Eye Color option" />
+              <img id="alien-eyeColor-img" src="placeholder.jpg" alt="Eye Color option" />
 
-  </div>
+            </div>
 
-  <div id="alien-pupils" class="alien-part">
+            <div id="alien-pupils" class="alien-part">
 
-    <img id="alien-pupils-img" src="placeholder.jpg" alt="Pupils option" />
+              <img id="alien-pupils-img" src="placeholder.jpg" alt="Pupils option" />
 
-  </div>
+            </div>
 
-  <div id="alien-mouth" class="alien-part">
+            <div id="alien-mouth" class="alien-part">
 
-    <img id="alien-mouth-img" src="placeholder.jpg" alt="Mouth option" />
+              <img id="alien-mouth-img" src="placeholder.jpg" alt="Mouth option" />
 
-  </div>
+            </div>
 
-  <div id="alien-noses" class="alien-part">
+            <div id="alien-noses" class="alien-part">
 
-    <img id="alien-noses-img" src="placeholder.jpg" alt="Nose option" />
+              <img id="alien-noses-img" src="placeholder.jpg" alt="Nose option" />
 
-  </div>
+            </div>
 
-  <div id="alien-ears" class="alien-part">
+            <div id="alien-ears" class="alien-part">
 
-    <img id="alien-ears-img" src="placeholder.jpg" alt="Ear option" />
+              <img id="alien-ears-img" src="placeholder.jpg" alt="Ear option" />
 
-  </div>
+            </div>
 
-  <div id="alien-blush" class="alien-part">
+            <div id="alien-blush" class="alien-part">
 
-    <img id="alien-blush-img" src="placeholder.jpg" alt="Blush option" />
+              <img id="alien-blush-img" src="placeholder.jpg" alt="Blush option" />
 
-  </div>
+            </div>
 
-  
 
-  <div id="alien-brows" class="alien-part">
 
-    <img id="alien-brows-img" src="placeholder.jpg" alt="Brow option" />
+            <div id="alien-brows" class="alien-part">
 
-  </div>
+              <img id="alien-brows-img" src="placeholder.jpg" alt="Brow option" />
 
-  </div>
+            </div>
 
-<!-- these are the buttons to control the alien's appearance -->
+          </div>
 
-        <div class="preview-tags">
+          <!-- these are the buttons to control the alien's appearance -->
 
-          <span class="tag">Body: <strong id="body-label">Body1</strong></span>
+          <div class="preview-tags">
 
-          <span class="tag">EyeColor: <strong id="EyeColor-label">EyeColor1</strong></span>
+            <span class="tag">Body: <strong id="body-label">Body1</strong></span>
 
-          <span class="tag">Pupils: <strong id="Pupils-label">Pupils1</strong></span>
+            <span class="tag">EyeColor: <strong id="EyeColor-label">EyeColor1</strong></span>
 
-          <span class="tag">Brows: <strong id="Brows-label">Brows1</strong></span>
+            <span class="tag">Pupils: <strong id="Pupils-label">Pupils1</strong></span>
 
-          <span class="tag">Blush: <strong id="Blush-label">Blush1</strong></span>
+            <span class="tag">Brows: <strong id="Brows-label">Brows1</strong></span>
 
-          <span class="tag">Mouth: <strong id="Mouth-label">Mouth1</strong></span>
+            <span class="tag">Blush: <strong id="Blush-label">Blush1</strong></span>
 
-          <span class="tag">Nose: <strong id="Nose-label">Nose1</strong></span>
+            <span class="tag">Mouth: <strong id="Mouth-label">Mouth1</strong></span>
 
-          <span class="tag">Ears: <strong id="Ears-label">Ears1</strong></span>
+            <span class="tag">Nose: <strong id="Nose-label">Nose1</strong></span>
+
+            <span class="tag">Ears: <strong id="Ears-label">Ears1</strong></span>
+
+          </div>
 
         </div>
-
-      </div>
 
         <!-- the updated code for byuttons, scale, and arrows to move images-->
 
@@ -294,7 +293,7 @@
 
           </div>
 
-<!-- pupils   section, also code section for the accordion style boxes that come down
+          <!-- pupils   section, also code section for the accordion style boxes that come down
 
           and show button layout -->
 
@@ -344,7 +343,7 @@
 
           <!-- Brows section-->
 
-           <div class="control-card">
+          <div class="control-card">
 
             <h3 class="panel-trigger">brows</h3>
 
@@ -390,7 +389,7 @@
 
           <!-- blush section-->
 
-           <div class="control-card">
+          <div class="control-card">
 
             <h3 class="panel-trigger">blush</h3>
 
@@ -436,7 +435,7 @@
 
           <!--Mouths-->
 
-           <div class="control-card">
+          <div class="control-card">
 
             <h3 class="panel-trigger">mouths</h3>
 
@@ -482,7 +481,7 @@
 
           <!--Noses-->
 
-           <div class="control-card">
+          <div class="control-card">
 
             <h3 class="panel-trigger">Noses</h3>
 
@@ -528,7 +527,7 @@
 
           <!--Ears-->
 
-           <div class="control-card">
+          <div class="control-card">
 
             <h3 class="panel-trigger">Ears</h3>
 
@@ -574,41 +573,25 @@
 
         </div>
 
-    </section>
-
-<section class="gallerySection">
-
-    <h2>Saved Aliens</h2>
+      </section>
 
 
+      <div id="gallery"></div>
 
-    <div id="gallery"></div>
-
-</section>
 
 <!-- these are the start and gallery buttons at the bottom of the page -->
 
-    <footer>
+<footer>
 
   <button id="start-button">Start Building</button>
 
-
-
-  <button id="gallery-button">Gallery</button>
-
-
-
-  <button id="saveAlienBtn">💾 Save Alien</button>
-
+  <button id="save-button">Save Alien</button>
 </footer>
 
-  </main>
+</main>
 
-
-
-  <script src="page.js"></script>
+<script src="page.js"></script>
 
 </body>
 
 </html>>
-

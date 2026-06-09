@@ -540,122 +540,92 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+const saveBtn = document.getElementById("save-button");
+const gallery = document.getElementById("gallery");
 
+saveBtn.addEventListener("click", saveAlien);
 
-console.log("Save clicked");
+function saveAlien() {
 
+    const alien = document.getElementById("alienWorkbench");
 
-
-saveBtn.addEventListener("click", () => {
-
-  const workbench = document.getElementById("alienWorkbench");
-
-
-
-  setTimeout(() => {
-
-    html2canvas(workbench, {
-
-      useCORS: true,
-
-      backgroundColor: null
-
+    html2canvas(alien, {
+        backgroundColor: null
     }).then(canvas => {
 
+        const imageData = canvas.toDataURL("image/png");
 
+        const img = document.createElement("img");
+        img.src = imageData;
+        img.classList.add("gallery-image");
 
-      const imgData = canvas.toDataURL("image/png");
+        gallery.appendChild(img);
 
-
-
-      let saved = JSON.parse(localStorage.getItem("aliens")) || [];
-
-      saved.push(imgData);
-
-      localStorage.setItem("aliens", JSON.stringify(saved));
-
-
-
-      renderGallery();
-
+        saveGallery();
     });
-
-  }, 200);
-
-});
-
-
-
-  html2canvas(workbench).then(canvas => {
-
-    const imgData = canvas.toDataURL("image/png");
-
-
-
-    html2canvas(workbench).then(canvas => {
-
-  console.log("Canvas created");
-
-});
-
-    // load existing gallery from storage
-
-    let savedAliens = JSON.parse(localStorage.getItem("aliens")) || [];
-
-
-
-    // add new alien
-
-    savedAliens.push(imgData);
-
-
-
-    // save back to storage
-
-    localStorage.setItem("aliens", JSON.stringify(savedAliens));
-
-
-
-    // render gallery
-
-    renderGallery();
-
-  });
-
-
-
-function renderGallery() {
-
-  const gallery = document.getElementById("gallery");
-
-  gallery.innerHTML = "";
-
-
-
-  let savedAliens = JSON.parse(localStorage.getItem("aliens")) || [];
-
-
-
-  savedAliens.forEach((imgSrc, index) => {
-
-    const img = document.createElement("img");
-
-    img.src = imgSrc;
-
-    img.style.width = "150px";
-
-    img.style.margin = "10px";
-
-    img.style.border = "2px solid white";
-
-
-
-    gallery.appendChild(img);
-
-  });
-
 }
 
+function saveGallery() {
+
+    const images = [];
+
+    gallery.querySelectorAll("img").forEach(img => {
+        images.push(img.src);
+    });
+
+    localStorage.setItem(
+        "alienGallery",
+        JSON.stringify(images)
+    );
+}
+
+function loadGallery() {
+
+    const saved =
+        JSON.parse(localStorage.getItem("alienGallery")) || [];
+
+    saved.forEach(src => {
+
+        const img = document.createElement("img");
+
+        img.src = src;
+        img.classList.add("gallery-image");
+
+        gallery.appendChild(img);
+    });
+}
+
+loadGallery();
 
 
-window.addEventListener("load", renderGallery);
+function saveGallery() {
+
+    const images = [];
+
+    gallery.querySelectorAll("img").forEach(img => {
+        images.push(img.src);
+    });
+
+    localStorage.setItem(
+        "alienGallery",
+        JSON.stringify(images)
+    );
+}
+
+function loadGallery() {
+
+    const saved =
+        JSON.parse(localStorage.getItem("alienGallery")) || [];
+
+    saved.forEach(src => {
+
+        const img = document.createElement("img");
+
+        img.src = src;
+        img.classList.add("gallery-image");
+
+        gallery.appendChild(img);
+    });
+}
+
+loadGallery();
