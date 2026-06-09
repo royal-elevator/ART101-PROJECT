@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // array for features, the state variable chooses which of these are selected
   const variants = {
     body: [
-      { label: 'body1', className: 'body-0', src: 'images/body-0.png' },
+      { label: 'body1', className: 'body-0', src: 'images/bodies/body-0.png' },
       { label: 'body2', className: 'body-1', src: 'images/body-1.png' },
       { label: 'body3', className: 'body-2', src: 'images/body-2.png' }
     ],
