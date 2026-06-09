@@ -55,15 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
       { label: 'Eye Color2', className: 'eyeColor-1', src: 'images/eye_color/eyecolor-1.png' },
     ],
     pupils: [
-      { label: 'pupils1', className: 'pupils-0', src: 'images/pupils/pupils-0.png' },
-      { label: 'pupils2', className: 'pupils-1', src: 'images/pupils/pupils-1.png' },
-      { label: 'pupils3', className: 'pupils-2', src: 'images/pupils/pupils-2.png' },
-      { label: 'pupils4', className: 'pupils-3', src: 'images/pupils/pupils-3.png' },
-      { label: 'pupils5', className: 'pupils-4', src: 'images/pupils/pupils-4.png' },
-      { label: 'pupils6', className: 'pupils-5', src: 'images/pupils/pupils-5.png' },
-      { label: 'pupils7', className: 'pupils-6', src: 'images/pupils/pupils-6.png' },
-      { label: 'pupils8', className: 'pupils-7', src: 'images/pupils/pupils-7.png' },
-      { label: 'pupils9', className: 'pupils-8', src: 'images/pupils/pupils-8.png' },
+      { label: 'pupils1', className: 'pupils-0', src: 'images/pupils/pupil-0.png' },
+      { label: 'pupils2', className: 'pupils-1', src: 'images/pupils/pupil-1.png' },
+      { label: 'pupils3', className: 'pupils-2', src: 'images/pupils/pupil-2.png' },
+      { label: 'pupils4', className: 'pupils-3', src: 'images/pupils/pupil-3.png' },
+      { label: 'pupils5', className: 'pupils-4', src: 'images/pupils/pupil-4.png' },
+      { label: 'pupils6', className: 'pupils-5', src: 'images/pupils/pupil-5.png' },
+      { label: 'pupils7', className: 'pupils-6', src: 'images/pupils/pupil-6.png' },
+      { label: 'pupils8', className: 'pupils-7', src: 'images/pupils/pupil-7.png' },
+      { label: 'pupils9', className: 'pupils-8', src: 'images/pupils/pupil-8.png' },
       
     ],
     brows: [
@@ -91,8 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
       { label: 'mouths4', className: 'mouths-3', src: 'images/mouths/mouth-3.png' },
       { label: 'mouths5', className: 'mouths-4', src: 'images/mouths/mouth-4.png' },
       { label: 'mouths6', className: 'mouths-5', src: 'images/mouths/mouth-5.png' },
-      { label: 'mouths7', className: 'mouths-6', src: 'images/mouths/mouth-6.png' },
-      { label: 'mouths8', className: 'mouths-7', src: 'images/mouths/mouth-7.png' },
     ],
     noses: [
       { label: 'noses1', className: 'noses-0', src: 'images/noses/nose-0.png' },
