@@ -7,34 +7,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const introPanel = document.getElementById('intro-panel');
   
 
-  const bodyEl = document.getElementById('alien-body');
+ const bodyEl = document.getElementById('alien-body');
   const eyeColorEl = document.getElementById('alien-eyeColor');
   const pupilsEl = document.getElementById('alien-pupils');
-  const mouthEl = document.getElementById('alien-mouth');
-  const nosesEl = document.getElementById('alien-Noses');
-  const earsEl = document.getElementById('alien-pupils');
+  const mouthsEl = document.getElementById('alien-mouth');
+  const nosesEl = document.getElementById('alien-noses'); // Fixed capitalization
+  const earsEl = document.getElementById('alien-ears');   // Fixed copy-paste error
   const blushEl = document.getElementById('alien-blush');
   const browsEl = document.getElementById('alien-brows');
   
-
   const bodyImg = document.getElementById('alien-body-img');
   const eyeColorImg = document.getElementById('alien-eyeColor-img');
   const pupilsImg = document.getElementById('alien-pupils-img');
-  const mouthImg = document.getElementById('alien-mouth-img');
+  const mouthsImg = document.getElementById('alien-mouth-img');
   const nosesImg = document.getElementById('alien-noses-img');
   const earsImg = document.getElementById('alien-ears-img');
   const blushImg = document.getElementById('alien-blush-img');
   const browsImg = document.getElementById('alien-brows-img');
   
-
   const bodyLabel = document.getElementById('body-label');
-  const eyeColorLabel = document.getElementById('EyeColor-label');
-  const pupilsLabel = document.getElementById('Pupils-label');
-  const mouthLabel = document.getElementById('mouth-label');
-  const nosesLabel = document.getElementById('noses-label');
-  const earsLabel = document.getElementById('ears-label');
-  const blushLabel = document.getElementById('blush-label');
-  const browsLabel = document.getElementById('brows-label');
+  const eyeColorLabel = document.getElementById('EyeColor-label'); // Fixed case
+  const pupilsLabel = document.getElementById('Pupils-label');     // Fixed case
+  const mouthsLabel = document.getElementById('Mouth-label');      // Fixed 's'
+  const nosesLabel = document.getElementById('Nose-label');        // Fixed 's'
+  const earsLabel = document.getElementById('Ears-label');         // Fixed case
+  const blushLabel = document.getElementById('Blush-label');       // Fixed case
+  const browsLabel = document.getElementById('Brows-label');       // Fixed case
   
 
 
@@ -115,8 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // keeping track of objects 
   const state = {
     body: { index: 0, x: 0, y: 0, scale: 50 },
-    head: { index: 0, x: 0, y: 0, scale: 50 },
-    features: { index: 0, x: 0, y: 0, scale: 50 }
+    eyeColor: { index: 0, x: 0, y: 0, scale: 50 },
+    pupils: { index: 0, x: 0, y: 0, scale: 50 },
+    brows: { index: 0, x: 0, y: 0, scale: 50 },
+    blush: { index: 0, x: 0, y: 0, scale: 50 },
+    mouths: { index: 0, x: 0, y: 0, scale: 50 },
+    noses: { index: 0, x: 0, y: 0, scale: 50 },
+    ears: { index: 0, x: 0, y: 0, scale: 50 }
   };
 
   // function to apply CSS transforms
@@ -130,35 +133,78 @@ document.addEventListener('DOMContentLoaded', () => {
     const bodyChoice = variants.body[state.body.index];
     const eyeColorChoice = variants.eyeColor[state.eyeColor.index];
     const pupilsChoice = variants.pupils[state.pupils.index];
+    const browsChoice = variants.brows[state.brows.index];
+    const earsChoice = variants.ears[state.ears.index];
+    const mouthsChoice = variants.mouths[state.mouths.index];
+    const nosesChoice = variants.noses[state.noses.index];
+    const blushChoice = variants.blush[state.blush.index];
 
     bodyEl.className = `alien-part alien-body ${bodyChoice.className}`;
     eyeColorEl.className = `alien-part alien-eyeColor ${eyeColorChoice.className}`;
     pupilsEl.className = `alien-part alien-pupils ${pupilsChoice.className}`;
+    browsEl.className = `alien-part alien-brows ${browsChoice.className}`;
+    earsEl.className = `alien-part alien-ears ${earsChoice.className}`;
+    mouthsEl.className = `alien-part alien-mouths ${mouthsChoice.className}`;
+    nosesEl.className = `alien-part alien-noses ${nosesChoice.className}`;
+    blushEl.className = `alien-part alien-blush ${blushChoice.className}`;
 
     bodyImg.style.display = 'block';
     eyeColorImg.style.display = 'block';
     pupilsImg.style.display = 'block';
+    browsImg.style.display = 'block';
+    earsImg.style.display = 'block';
+    mouthsImg.style.display = 'block';
+    nosesImg.style.display = 'block';
+    blushImg.style.display = 'block';
+    
 
     bodyImg.src = bodyChoice.src;
     eyeColorImg.src = eyeColorChoice.src;
     pupilsImg.src = pupilsChoice.src;
+    browsImg.src = browsChoice.src;
+    earsImg.src = earsChoice.src;
+    mouthsImg.src = mouthsChoice.src;
+    nosesImg.src = nosesChoice.src;
+    blushImg.src = blushChoice.src;
 
     bodyImg.alt = bodyChoice.label;
     eyeColorImg.alt = eyeColorChoice.label;
     pupilsImg.alt = pupilsChoice.label;
+    browsImg.alt = browsChoice.label;
+    earsImg.alt = earsChoice.label;
+    mouthsImg.alt = mouthsChoice.label;
+    nosesImg.alt = nosesChoice.label;
+    blushImg.alt = blushChoice.label;
 
     bodyImg.onerror = () => { bodyImg.style.display = 'none'; };
     eyeColorImg.onerror = () => { eyeColorImg.style.display = 'none'; };
     pupilsImg.onerror = () => { pupilsImg.style.display = 'none'; };
+    browsImg.onerror = () => { browsImg.style.display = 'none'; };
+    earsImg.onerror = () => { earsImg.style.display = 'none'; };
+    mouthsImg.onerror = () => { mouthsImg.style.display = 'none'; };
+    nosesImg.onerror = () => { nosesImg.style.display = 'none'; };
+    blushImg.onerror = () => { blushImg.style.display = 'none'; };
+
 
     bodyLabel.textContent = bodyChoice.label;
     eyeColorLabel.textContent = eyeColorChoice.label;
     pupilsLabel.textContent = pupilsChoice.label;
+    browsLabel.textContent = browsChoice.label;
+    earsLabel.textContent = earsChoice.label;
+    mouthsLabel.textContent = mouthsChoice.label;
+    nosesLabel.textContent = nosesChoice.label;
+    blushLabel.textContent = blushChoice.label;
+
 
     // Apply exact positions and scales
     applyTransform(bodyImg, state.body);
     applyTransform(eyeColorImg, state.eyeColor);
     applyTransform(pupilsImg, state.pupils);
+    applyTransform(browsImg, state.brows);
+    applyTransform(earsImg, state.ears);
+    applyTransform(mouthsImg, state.mouths);
+    applyTransform(nosesImg, state.noses);
+    applyTransform(blushImg, state.blush);
   }
 
   // event listeners and uses function for start button
